@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&family=Source+Sans+3&display=swap');
+$turquoise:#4BB4A2;
+$pink-pale:#DC8D75;
+$gris-light:#F9F4F0;
+$blue-dark:#142131;
+//TIPS
+// conversion px en rem
+// ex font-size:rem(14px);
+$html-font-size: 16px;
+@function stripUnit($value) {
+  @return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+  @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}
+html{
+    // font-size: 20px;
+}
+body{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0;
+    margin:0;
+    color: $blue-dark;
+}
+.content{
+    padding: 15px;
+}
+h1{
+    font-size: 30px;
+}
+h2{
+    font-size:22px;
+}
+p.pixel{font-size: 16px;}
+p.rem{font-size: rem(16px);}
+
+//Utilities
+.bg-light{
+    background-color: $gris-light;
+    padding:0.6rem;
+    border:1px darken($gris-light,20%) solid;
+}
+.ml-auto{
+    margin-left: auto;
+}
+.mr-auto{
+    margin-right: auto;
+}
+.mt-auto{
+    margin-top: auto;
+}
+.mb-auto{
+    margin-bottom: auto;
+}
+.flex-row{
+    flex-direction: row;
+}
+.flex-column{
+    flex-direction: column;
+}
+
+//FLEXBOX PARTIE RAPPEL
+.flex{
+    display: flex;
+    justify-content:flex-start;
+    gap:10px;
+    div{
+        width: 200px;
+        height: 200px;
+        background-color: $pink-pale;
+    }
+}
+
+
+
+
+// les breakpoint
